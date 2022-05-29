@@ -7,8 +7,9 @@ class QA {
 public:
 	QA();
 	QA(char);
+	QA(int,int);
 	string returnAns();
-	string newCard();
+	void newCard();
 
 private:
 	int ans;
