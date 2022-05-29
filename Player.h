@@ -7,14 +7,16 @@ using namespace std;
 
 class Player
 {
+private:
     string name;
-    int sum;
+    static int PlayerSum;
 
 public:
     Player();
-    Player(string,Point);
-    string getName() const;
-    int getPoint() const;
+    Player(string, int);
+    string getName();
+    int getPlayerSum();
+    void toString();
 };
 
 #endif

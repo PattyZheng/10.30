@@ -1,19 +1,28 @@
 #include "Player.h"
+#include "Point.h"
+#include <iostream>
+#include <sstream>
+using namespace std;
 
+int Player::PlayerSum = 0;
 Player::Player(){
 
 }
 
-Player::Player(string name, Point p){
-
+Player::Player(string n, int ps){
+    name = n;
+    ps = PlayerSum;
 }
 
-string Player::getName() const
+string Player::getName()
 {
     return name;
 }
 
-int Player::getPoint() const
+int Player::getPlayerSum()
 {
-    return sum;
+    return PlayerSum;
+}
+void Player::toString() {
+    cout << "name: " << name << " , " << "Point: " << PlayerSum << endl;
 }
