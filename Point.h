@@ -4,9 +4,12 @@
 class Point
 {
 private:
-    int number;
+    static double CardPoint;
+    static int CardSum;
 public:
     Point();
     Point(int);
+    double getCardPoint();
+    int getCardSum();
 };
 #endif
