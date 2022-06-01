@@ -5,7 +5,30 @@
 #include "Player.h"
 #include "QA.h"
 using namespace std;
-
+void game(Player P1,Player P2) {
+	Card c;
+	cout << "\nP1";
+	P1.toString();
+	cout << "P2";
+	P2.toString();
+	Delay(5 * 1000);
+	system("cls");
+	cout << "請閒家在5秒內迴避" << endl;
+	Delay(5 * 1000);
+	system("cls");
+	int card = c.cardCout();
+	cout << card << endl;
+	P1.point.Point(card);
+	Delay(5 * 1000);
+	system("cls");
+	cout << "請莊家在5秒內迴避" << endl;
+	Delay(5 * 1000);
+	system("cls");
+	int card = c.cardCout();
+	cout << card << endl;
+	Delay(5 * 1000);
+	system("cls");
+}
 void Delay(int time)
 {
 	clock_t   now = clock();
@@ -23,13 +46,20 @@ int main() {
 	cin >> player2;
 	Player P1(player1, 0);
 	Player P2(player2, 0);
-	cout << "\nP1";
-	P1.toString();
-	cout << "P2";
-	P2.toString();
-	Delay(5 * 1000);
-	system("cls");
-	cout << "請閒家在5秒內迴避" << endl;
-	Delay(5 * 1000);
-	system("cls");
+	char playAgain;
+	cin >> playAgain;
+	while (playAgain=='y'|| playAgain=='Y') {
+		Player P1(player1, 0);
+		Player P2(player2, 0);
+		cout << "\nP1";
+		P1.toString();
+		cout << "P2";
+		P2.toString();
+		Delay(5 * 1000);
+		system("cls");
+		cout << "請閒家在5秒內迴避" << endl;
+		Delay(5 * 1000);
+		system("cls");
+	}
+	
 }
