@@ -9,9 +9,10 @@ Player::Player(){
 
 }
 
-Player::Player(string n, int ps){
+Player::Player(string n, int ps ,Point p){
     name = n;
     ps = PlayerSum;
+    
 }
 
 string Player::getName()
@@ -23,6 +24,8 @@ int Player::getPlayerSum()
 {
     return PlayerSum;
 }
-void Player::toString() {
-    cout << "name: " << name << " , " << "Point: " << PlayerSum << endl;
+string Player::toString() {
+    stringstream ss;
+    ss << "name: " << name << " , " << "Point: " << PlayerSum << endl;
+    return ss.str();
 }
