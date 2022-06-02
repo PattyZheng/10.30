@@ -3,7 +3,6 @@
 #include "Card.h"
 #include "Point.h"
 #include "Player.h"
-#include "QA.h"
 using namespace std;
 void Delay(int time)
 {
@@ -90,6 +89,60 @@ void game(Player P1, Player P2, Point p1, Point p2)
 
 	else
 		cout << " 換莊家看牌\n 閒家在5秒內迴避";
+	if (num < 5 && P2.getPoint().getCardPoint() < 10.5) {
+		num = 1;
+		Delay(5 * 1000);
+		system("cls");
+		cout << " 莊家底牌為 :";
+		c.print(cardnum);
+		cout << " (請記得)" << endl;
+		P1.setCard(c.getCard(cardnum), num);
+
+		cout << " \n 要加牌按1，不加牌按0" << endl;
+		cin >> n1;
+		system("cls");
+		cardnum++;
+		while (n1 && num < 5 && P1.getPoint().getCardPoint() < 10.5)
+		{
+			num++;
+			cout << " 莊家第 " << num << " 張牌為 :";
+			c.print(cardnum);
+			Delay(3 * 1000);
+			P1.setCard(c.getCard(cardnum), cardnum + 1);
+			if (P1.getPoint().getCardPoint() < 10.5) {
+				cout << " \n 要加牌按1，不加牌按0" << endl;
+				cin >> n1;
+			}
+			system("cls");
+			cardnum++;
+		}
+		if (num == 5) {
+			cout << " 已得五張牌，恭喜贏這局!" << endl;
+			Delay(3 * 1000);
+		}
+		else if (P1.getPoint().getCardPoint() == 10.5) {
+			cout << " 剛好十點半，恭喜贏這局!" << endl;
+			Delay(3 * 1000);
+		}
+		else if (P1.getPoint().getCardPoint() > 10.5) {
+			cout << " 爆掉啦!哈哈你輸了，閒家贏此局!" << endl;
+			Delay(3 * 1000);
+		}
+		cout << " 莊家牌分為 :" << P1.getPoint().getCardPoint() << " 點" << endl;
+		cout << " 閒家牌分為 :" << P2.getPoint().getCardPoint() << " 點" << endl;
+		if (P1.getPoint().getCardPoint()<10.5 && P1.getPoint().getCardPoint() >= P2.getPoint().getCardPoint()) {
+			cout << " 莊家獲勝，得1分";
+			P1.plusPlayerSum();
+			Delay(3 * 1000);
+		}
+		else {
+			cout << " 閒家獲勝，得1分";
+			P2.plusPlayerSum();
+		}
+			
+		Delay(3 * 1000);
+	}
+	
 }
 
 int main() {

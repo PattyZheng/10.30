@@ -15,8 +15,9 @@ public:
     Player();
     Player(string, int ,Point);//¦W¦r,Á`¤À
     string getName();
+    void plusPlayerSum();
     int getPlayerSum();
-    string toString();
+    void toString();
     void setCard(int c, int n);
     int getCard(int i)const;
     Point getPoint()const;

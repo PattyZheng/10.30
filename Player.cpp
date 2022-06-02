@@ -19,16 +19,17 @@ string Player::getName()
 {
     return name;
 }
-
+void Player::plusPlayerSum() {
+    PlayerSum++;
+}
 int Player::getPlayerSum()
 {
     return PlayerSum;
 }
-string Player::toString() {
+void Player::toString() {
     stringstream ss;
     cout << "name: " << name << " , " << "Point: " << PlayerSum;
     point.toString();
-    return 0;
 }
 void Player::setCard(int c, int n)
 {

@@ -5,8 +5,10 @@ class Card{
 
 public:
 	Card();
-	int cardCout();
 	int number = 52;
-	int cardarray1[];
+	int card[];
+	void shuffle();
+	int getCard(int);
+	void print(int i);
 };
 #endif
