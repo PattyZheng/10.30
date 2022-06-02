@@ -4,7 +4,7 @@
 #include <sstream>
 using namespace std;
 
-int Player::PlayerSum = 0;
+
 Player::Player(){
 
 }
@@ -26,6 +26,21 @@ int Player::getPlayerSum()
 }
 string Player::toString() {
     stringstream ss;
-    ss << "name: " << name << " , " << "Point: " << PlayerSum << endl;
-    return ss.str();
+    cout << "name: " << name << " , " << "Point: " << PlayerSum;
+    point.toString();
+    return 0;
+}
+void Player::setCard(int c, int n)
+{
+    playerCard[n - 1] = c;
+    point.plusCardPoint(c);
+}
+
+int Player::getCard(int i)const
+{
+    return playerCard[i - 1];
+}
+Point Player::getPoint()const
+{
+    return point;
 }

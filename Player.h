@@ -8,14 +8,18 @@ class Player
 {
 private:
     string name;
-    static int PlayerSum;
+    int PlayerSum=0;
     Point point;
+    int playerCard[5];
 public:
     Player();
     Player(string, int ,Point);//¦W¦r,Á`¤À
     string getName();
     int getPlayerSum();
     string toString();
+    void setCard(int c, int n);
+    int getCard(int i)const;
+    Point getPoint()const;
 };
 
 #endif
