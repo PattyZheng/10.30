@@ -62,11 +62,12 @@ void game(Player &P1, Player &P2)
 		cout << " 閒家(" << P2.getName() << ")第 " << num << " 張牌為 :";
 		c.print(cardnum);
 		Delay(1 * 1000);
-		/*cout << "閒家目前有 :底牌";
-		for (int i = 1; i < num; i++) {
-			cout << " " << P2.printCard(i);
+		cout << " 閒家目前有 :底牌 ";
+		for (int i = 2; i < num; i++) {
+			cout << " " << P2.printCard(i) << " ";
 		}
-		cout << endl;*/
+		c.print(cardnum);
+		cout << endl;
 		P2.setCard(c.getCard(cardnum), num);
 		if (P2.getPoint().getCardPoint() < 10.5 && num<5) {
 			cout << " \n 要加牌按1，不加牌按0" << endl;
@@ -74,6 +75,7 @@ void game(Player &P1, Player &P2)
 		}
 		else
 			Delay(2.5 * 1000);
+
 		system("cls");
 		cardnum++;
 	}
@@ -117,6 +119,7 @@ void game(Player &P1, Player &P2)
 		cout << " \n 要加牌按1，不加牌按0" << endl;
 		cin >> n1;
 		system("cls");
+		cardnum++;
 		while (n1 && num < 5 && P1.getPoint().getCardPoint() < 10.5)
 		{
 			
@@ -124,16 +127,20 @@ void game(Player &P1, Player &P2)
 			cout << " 莊家(" << P1.getName() << ")第 " << num << " 張牌為 :";
 			c.print(cardnum);
 			Delay(1 * 1000);
-			/*cout << "莊家目前有 :底牌";
-			for (int i = 1; i < num; i++) {
-				cout << " " << P1.printCard(i);
+			cout << " 莊家目前有 :底牌 ";
+			for (int i = 2; i < num; i++) {
+				cout << " " << P1.printCard(i) << " ";
 			}
-			cout << endl;*/
-			P1.setCard(c.getCard(cardnum), cardnum + 1);
+			c.print(cardnum);
+			cout << endl;
+			P1.setCard(c.getCard(cardnum), num);
 			if (num < 5 && P1.getPoint().getCardPoint() < 10.5) {
 				cout << " \n 要加牌按1，不加牌按0" << endl;
 				cin >> n1;
 			}
+			else
+				Delay(2.5 * 1000);
+
 			system("cls");
 			cardnum++;
 		}
