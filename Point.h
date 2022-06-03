@@ -5,14 +5,11 @@ class Point
 {
 public:
     int playersCard[5];//礟
-    double CardPoint = 0;//翴计
-    int CardSum = 0;//礟计
+    double CardPoint;//翴计
+    int CardSum;//礟计
     Point();
-    Point(int);
-    void setCardPoint(int);//衡Τ碭翴
+    Point(double);
     double getCardPoint();//Τ
-    void saveCard(int);//纗
-    void toString();
     void plusCardPoint(int c);
 };
 #endif
