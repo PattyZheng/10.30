@@ -6,7 +6,7 @@ Card::Card()
 {
 	/*
 	ด๚ธี
-	int temp[9] = { 0,1,10,11,13,14,23,24,25};
+	int temp[9] = { 1,1,1,1,1,1,1,1,1};
 	for (int i = 0; i < 9; i++)
 		card[i] = temp[i];
 	for (int i = 9; i < 52; i++)

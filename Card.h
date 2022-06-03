@@ -6,7 +6,7 @@ class Card{
 public:
 	Card();
 	int number = 52;
-	int card[];
+	int card[52];
 	void shuffle();
 	int getCard(int);//¦³
 	void print(int i);//¦³
