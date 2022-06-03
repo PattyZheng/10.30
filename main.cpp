@@ -32,7 +32,7 @@ void gameRule()
 		system("cls");
 	}
 }
-void game(Player P1, Player P2)
+void game(Player &P1, Player &P2)
 {
 	Card c;
 	int num = 1;
