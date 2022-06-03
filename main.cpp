@@ -95,19 +95,19 @@ void game(Player &P1, Player &P2)
 		P2.plusPlayerSum();
 		Delay(2 * 1000);
 	}
-	else if (P2.getPoint().getCardPoint() == 10.5) {
+	/*else if (P2.getPoint().getCardPoint() == 10.5) {
 		cout << " 剛好十點半，恭喜贏這局!" << endl;
 		Delay(1 * 1000);
 		cout << " 閒家(" << P2.getName() << ")牌分為 :" << P2.getPoint().getCardPoint() << " 點" << endl;
 		cout << " 閒家(" << P2.getName() << ")獲勝，得1分";
 		P2.plusPlayerSum();
 		Delay(2 * 1000);
-	}
+	}*/
 	else 
 		cout << " 換莊家(" << P1.getName() << ")看牌\n 閒家在3秒內迴避";
 		
 
-	if (num < 5 && P2.getPoint().getCardPoint() < 10.5) {
+	if (num < 5 && P2.getPoint().getCardPoint() <= 10.5) {
 		num = 1;
 		Delay(3 * 1000);
 		system("cls");
