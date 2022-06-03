@@ -32,7 +32,7 @@ int Player::getPlayerSum()//¦³
 }
 void Player::setCard(int c, int n)//¦³
 {
-    playerCard[n - 1] = c;
+    playerCard[n] = c;
     point.plusCardPoint(c);
 }
 int Player::getCard(int i) const
@@ -45,7 +45,7 @@ string Player::printCard(int c) {
     string ranks[] = { "A", "2", "3", "4", "5", "6", "7", "8", "9","10", "J", "Q", "K" };
     string suit = suits[playerCard[c] / 13];//0,1,2,3  22/13 = 1.. 9
     string rank = ranks[playerCard[c] % 13];
-    ss << suit << ' ' << rank ;
+    ss << suit << ' ' << rank;
     return ss.str();
 }
 Point Player::getPoint() const //¦³
