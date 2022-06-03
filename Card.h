@@ -8,7 +8,7 @@ public:
 	int number = 52;
 	int card[];
 	void shuffle();
-	int getCard(int);
-	void print(int i);
+	int getCard(int);//¦³
+	void print(int i);//¦³
 };
 #endif
