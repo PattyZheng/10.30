@@ -10,11 +10,8 @@ public:
     Point();
     Point(int);
     void setCardPoint(int);//算有幾點
-    double getCardPoint();
-    void plusCardSum();//幾張牌
-    int getCardSum();
+    double getCardPoint();//有
     void saveCard(int);//儲存拿到的卡
-    int getCard();
     void toString();
     void plusCardPoint(int c);
 };
