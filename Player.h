@@ -8,7 +8,7 @@ class Player
 {
 private:
     string name;
-    static int PlayerSum;
+    int PlayerSum=0;
     Point point;
     int playerCard[5];
 public:
@@ -18,10 +18,11 @@ public:
     string getName();//有
     void plusPlayerSum();//有
     int getPlayerSum();//有
-    void toString();
     void setCard(int c, int n);//有
     int getCard(int i) const;
+    string printCard(int);
     Point getPoint() const;//有
+    void setPoint(Point);
 };
 
 #endif
