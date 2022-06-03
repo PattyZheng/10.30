@@ -39,8 +39,8 @@ void game(Player P1, Player P2, Point p1, Point p2)
 	double CardPoint1 = 0;
 	int card1 = 0;
 	bool n1= true;
-	cout << " \n莊家在5秒內迴避" << endl;
-	Delay(5 * 1000);
+	cout << " \n莊家在3秒內迴避" << endl;
+	Delay(3 * 1000);
 	system("cls");
 	cout << " 閒家底牌為 :";
 	c.print(cardnum);
@@ -56,7 +56,7 @@ void game(Player P1, Player P2, Point p1, Point p2)
 		num++;
 		cout << " 閒家第 " << num <<" 張牌為 :";
 		c.print(cardnum);
-		Delay(3 * 1000);
+		Delay(1 * 1000);
 		P2.setCard(c.getCard(cardnum), num);
 		if (P2.getPoint().getCardPoint() < 10.5) {
 			cout << " \n 要加牌按1，不加牌按0" << endl;
@@ -65,33 +65,36 @@ void game(Player P1, Player P2, Point p1, Point p2)
 		system("cls");
 		cardnum++;
 	}
-	if (num == 5) {
+	if (P2.getPoint().getCardPoint() > 10.5) {
+		cout << " 爆掉啦!哈哈你輸了，莊家贏此局!" << endl;
+		Delay(1 * 1000);
+		cout << " 閒家牌分為 :" << P2.getPoint().getCardPoint() << " 點" << endl;
+		cout << " 莊家獲勝，得1分";
+		P1.plusPlayerSum();
+		Delay(6 * 1000);
+	}
+	else if (num == 5) {
 		cout << " 已得五張牌，恭喜贏這局!" << endl;
-		Delay(3 * 1000);
+		Delay(1 * 1000);
 		cout << " 閒家牌分為 :" << P2.getPoint().getCardPoint() << " 點" << endl;
 		cout << " 閒家獲勝，得1分";
 		P2.plusPlayerSum();
-		Delay(3 * 1000);
+		Delay(6 * 1000);
 	}
 	else if (P2.getPoint().getCardPoint() == 10.5) {
 		cout << " 剛好十點半，恭喜贏這局!" << endl;
-		Delay(3 * 1000);
+		Delay(1 * 1000);
 		cout << " 閒家牌分為 :" << P2.getPoint().getCardPoint() << " 點" << endl;
 		cout << " 閒家獲勝，得1分";
 		P2.plusPlayerSum();
-		Delay(3 * 1000);
+		Delay(6 * 1000);
 	}
-	else if (P2.getPoint().getCardPoint() > 10.5) {
-		cout << " 爆掉啦!哈哈你輸了，莊家贏此局!" << endl;
-		P1.plusPlayerSum();
-		Delay(3 * 1000);
-	}
-
 	else
-		cout << " 換莊家看牌\n 閒家在5秒內迴避";
+		cout << " 換莊家看牌\n 閒家在3秒內迴避";
+
 	if (num < 5 && P2.getPoint().getCardPoint() < 10.5) {
 		num = 1;
-		Delay(5 * 1000);
+		Delay(3 * 1000);
 		system("cls");
 		cout << " 莊家底牌為 :";
 		c.print(cardnum);
@@ -107,7 +110,7 @@ void game(Player P1, Player P2, Point p1, Point p2)
 			num++;
 			cout << " 莊家第 " << num << " 張牌為 :";
 			c.print(cardnum);
-			Delay(3 * 1000);
+			Delay(1 * 1000);
 			P1.setCard(c.getCard(cardnum), cardnum + 1);
 			if (P1.getPoint().getCardPoint() < 10.5) {
 				cout << " \n 要加牌按1，不加牌按0" << endl;
@@ -116,18 +119,24 @@ void game(Player P1, Player P2, Point p1, Point p2)
 			system("cls");
 			cardnum++;
 		}
-		if (num == 5) {
+		if (P1.getPoint().getCardPoint() > 10.5) {
+			cout << " 爆掉啦!哈哈你輸了，閒家贏此局!" << endl;
+			Delay(1 * 1000);
+			cout << " 閒家牌分為 :" << P2.getPoint().getCardPoint() << " 點" << endl;
+			cout << " 莊家牌分為 :" << P1.getPoint().getCardPoint() << " 點" << endl;
+			cout << " 閒家獲勝，得1分";
+			P1.plusPlayerSum();
+			Delay(6 * 1000);
+		}
+		else if (num == 5) {
 			cout << " 已得五張牌，恭喜贏這局!" << endl;
-			Delay(3 * 1000);
+			Delay(1 * 1000);
 		}
 		else if (P1.getPoint().getCardPoint() == 10.5) {
 			cout << " 剛好十點半，恭喜贏這局!" << endl;
-			Delay(3 * 1000);
+			Delay(1 * 1000);
 		}
-		else if (P1.getPoint().getCardPoint() > 10.5) {
-			cout << " 爆掉啦!哈哈你輸了，閒家贏此局!" << endl;
-			Delay(3 * 1000);
-		}
+		
 		cout << " 莊家牌分為 :" << P1.getPoint().getCardPoint() << " 點" << endl;
 		cout << " 閒家牌分為 :" << P2.getPoint().getCardPoint() << " 點" << endl;
 		if (P1.getPoint().getCardPoint()<10.5 && P1.getPoint().getCardPoint() >= P2.getPoint().getCardPoint()) {
@@ -140,7 +149,7 @@ void game(Player P1, Player P2, Point p1, Point p2)
 			P2.plusPlayerSum();
 		}
 			
-		Delay(3 * 1000);
+		Delay(6 * 1000);
 	}
 	
 }
