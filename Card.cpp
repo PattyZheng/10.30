@@ -30,15 +30,15 @@ void Card::shuffle()
 		card[j] = temp;
 	}
 }
-int Card::getCard(int i)//有
+int Card::getCard(int i)
 {
 	return card[i];
 }
-void Card::print(int i)//有
+void Card::print(int i)
 {
 	string suits[] = { "黑桃", "愛心", "方塊", "梅花" };
 	string ranks[] = { "A", "2", "3", "4", "5", "6", "7", "8", "9","10", "J", "Q", "K" };
-	string suit = suits[card[i] / 13];//0,1,2,3  22/13 = 1.. 9
+	string suit = suits[card[i] / 13];
 	string rank = ranks[card[i] % 13];
 	cout << suit << ' ' << rank << endl;
 }
