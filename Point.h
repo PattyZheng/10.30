@@ -4,12 +4,12 @@
 class Point
 {
 public:
-    int playersCard[5];//存拿到的牌
-    double CardPoint;//點數
-    int CardSum;//牌數
+    int playersCard[5];
+    double CardPoint;
+    int CardSum;
     Point();
     Point(double);
-    double getCardPoint();//有
+    double getCardPoint();
     void plusCardPoint(int c);
 };
 #endif

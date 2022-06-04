@@ -2,17 +2,17 @@
 #include<iostream>
 using namespace std;
 
-Point::Point()//¦³
+Point::Point()
 {
 	CardPoint = 0;
 	CardSum=0;
 }
-Point::Point(double n)//¦³
+Point::Point(double n)
 {
 	CardPoint = n;
 }
 
-double Point::getCardPoint()//¦³
+double Point::getCardPoint()
 {
 	return CardPoint;
 }
