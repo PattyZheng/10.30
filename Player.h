@@ -1,10 +1,11 @@
 #include <string>
 #include "Point.h"
+
 using namespace std;
 #ifndef Player_H
 #define Player_H
 
-class Player
+class Player//¬R¼_­t³d
 {
 private:
     string name;

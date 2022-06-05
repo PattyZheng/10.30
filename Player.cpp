@@ -1,5 +1,6 @@
 #include "Player.h"
 #include "Point.h"
+
 #include <iostream>
 #include <sstream>
 using namespace std;
@@ -22,6 +23,14 @@ string Player::getName()
 {
     return name;
 }
+Point Player::getPoint() const
+{
+    return point;
+}
+void Player::setPoint(Point p) {
+    point = p;
+}
+
 void Player::plusPlayerSum()
 {
     PlayerSum++;
@@ -43,11 +52,4 @@ string Player::printCard(int c) {
     string rank = ranks[playerCard[c] % 13];
     ss << suit << ' ' << rank;
     return ss.str();
-}
-Point Player::getPoint() const
-{
-    return point;
-}
-void Player::setPoint(Point p) {
-    point = p;
 }

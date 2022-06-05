@@ -13,7 +13,6 @@ void Delay(int time)
 }
 void gameRule()
 {
-	int m = 0;
 		cout << " 十點半遊戲開始 \n" << endl;
 		cout << " 遊戲人數2人，Player1先為莊家，換場莊家也換人。" << endl;
 		cout << " 閒家先開始遊戲，等閒家結束遊戲後，再換莊家開始遊戲。" << endl;
@@ -52,7 +51,7 @@ void game(Player &P1, Player &P2)
 	cout << " 閒家(" << P2.getName() << ")底牌為 :";
 	c.print(cardnum);
 	cout << " (請記得)" << endl;
-	P2.setCard(c.getCard(cardnum), cardnum + 1);
+	P2.setCard(c.getCard(cardnum), num);
 	cout << "\n 要加牌按1，不加牌按0" << endl;
 	cin >> n1;
 	system("cls");

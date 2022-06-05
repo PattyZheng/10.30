@@ -1,15 +1,15 @@
 #ifndef Point_H
 #define Point_H
 
-class Point
+class Point//夢安負責
 {
 public:
-    int playersCard[5];
-    double CardPoint;
-    int CardSum;
+    //int playersCard[5];//玩家抽到牌的陣列
+    double CardPoint;//玩家抽到牌的分數，幾點(10.5)
     Point();
     Point(double);
-    double getCardPoint();
-    void plusCardPoint(int c);
+    void plusCardPoint(int c);//計算點數
+    double getCardPoint();//取得點數
+    
 };
 #endif
