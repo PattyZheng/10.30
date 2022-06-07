@@ -30,16 +30,16 @@ void gameRule()
 	system("cls");
 }
 bool yasorno() {
-	char nn1;
+	string nn1;
 	bool n1;
 	cin >> nn1;
 	int n = 0;
 	while (n != -1) {
-		if (nn1 == '0') {
+		if (nn1 == "0") {
 			n1 = 0;
 			n = -1;
 		}
-		else if (nn1 == '1') {
+		else if (nn1 == "1") {
 			n1 = 1;
 			n = -1;
 		}
@@ -74,23 +74,6 @@ void game(Player& P1, Player& P2)
 	cout << " (請記得)" << endl;
 	P2.setCard(c.getCard(cardnum), num);
 	cout << "\n 要加牌按1，不加牌按0" << endl;
-	//cin >> nn1;
-	//int n = 0;
-	/*while (n != -1) {
-		if (nn1 == '0') {
-			n1 = 0;
-			n = -1;
-		}
-		else if (nn1 == '1') {
-			n1 = 1;
-			n = -1;
-		}
-		else {
-			cout << "your enter is error,plz enter again." << endl;
-			cin >> nn1;
-		}
-	}*/
-	//cin >> n1;
 	n1 = yasorno();
 	system("cls");
 	cardnum++;
@@ -101,16 +84,15 @@ void game(Player& P1, Player& P2)
 		num++;
 		cout << " 閒家(" << P2.getName() << ")第 " << num << " 張牌為 :";
 		c.print(cardnum);
+		P2.setCard(c.getCard(cardnum), num);
 		cout << " 閒家目前有 :底牌 ";
-		for (int i = 2; i < num; i++) {
+		for (int i = 2; i <= num; i++) {
 			cout << " " << P2.printCard(i) << " ";
 		}
-		c.print(cardnum);
 		cout << endl;
-		P2.setCard(c.getCard(cardnum), num);
+		
 		if (P2.getPoint().getCardPoint() < 10.5 && num < 5) {
 			cout << "\n 要加牌按1，不加牌按0" << endl;
-			//cin >> n1;
 			n1 = yasorno();
 		}
 		else
@@ -146,7 +128,6 @@ void game(Player& P1, Player& P2)
 		cout << " (請記得)" << endl;
 		P1.setCard(c.getCard(cardnum), num);
 		cout << "\n 要加牌按1，不加牌按0" << endl;
-		//cin >> n1;
 		n1 = yasorno();
 		system("cls");
 		cardnum++;
@@ -156,16 +137,15 @@ void game(Player& P1, Player& P2)
 			num++;
 			cout << " 莊家(" << P1.getName() << ")第 " << num << " 張牌為 :";
 			c.print(cardnum);
+			P1.setCard(c.getCard(cardnum), num);
 			cout << " 莊家目前有 :底牌 ";
-			for (int i = 2; i < num; i++) {
+			for (int i = 2; i <= num; i++) {
 				cout << " " << P1.printCard(i) << " ";
 			}
-			c.print(cardnum);
 			cout << endl;
-			P1.setCard(c.getCard(cardnum), num);
+			
 			if (num < 5 && P1.getPoint().getCardPoint() < 10.5) {
 				cout << "\n 要加牌按1，不加牌按0" << endl;
-				//cin >> n1;
 				n1 = yasorno();
 			}
 			else
@@ -201,7 +181,7 @@ void game(Player& P1, Player& P2)
 }
 
 int main() {
-	gameRule();
+	gameRule();//呼叫遊戲規則
 	string player1, player2;
 	bool again = true;
 	cout << " 請輸入名字(Player1): ";
@@ -219,7 +199,7 @@ int main() {
 		if (gamenum % 2 == 0)
 			game(P2, P1);
 		else
-			game(P1, P2);
+			game(P1, P2);//奇數
 		cout << "\n 閱讀完畢請按 enter" << endl;
 		_getch();
 		system("cls");
@@ -227,7 +207,6 @@ int main() {
 		cout << " Player1 " << P1.getName() << " :" << P1.getPlayerSum() << "分" << endl;
 		cout << " Player2 " << P2.getName() << " :" << P2.getPlayerSum() << "分" << endl;
 		cout << "\n 若要繼續玩請按1，若要結束請按0" << endl;
-		//cin >> again;
 		again = yasorno();
 		gamenum++;
 

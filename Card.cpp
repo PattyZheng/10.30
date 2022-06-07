@@ -24,7 +24,7 @@ void Card::shuffle()
 	for (int i = 51; i > 0; i--)
 	{
 		int temp;
-		int j = rand() % i;
+		int j = rand() % (i+1);
 		temp = card[i];
 		card[i] = card[j];
 		card[j] = temp;
