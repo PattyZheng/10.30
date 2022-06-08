@@ -5,7 +5,6 @@ class Card{ //·­²ú­t³d
 
 public:
 	Card();
-	int number = 52;
 	int card[52];
 	void shuffle();//¬~µP
 	int getCard(int);//0~51
