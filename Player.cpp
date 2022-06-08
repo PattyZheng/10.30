@@ -1,6 +1,5 @@
 #include "Player.h"
 #include "Point.h"
-
 #include <iostream>
 #include <sstream>
 using namespace std;

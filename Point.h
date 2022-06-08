@@ -4,7 +4,6 @@
 class Point//夢安負責
 {
 public:
-    //int playersCard[5];//玩家抽到牌的陣列
     double CardPoint;//玩家抽到牌的分數，幾點(10.5)
     Point();
     Point(double);

@@ -29,7 +29,7 @@ void gameRule()
 	_getch();
 	system("cls");
 }
-bool yasorno() {
+bool YesOrNo() {
 	string nn1;
 	bool n1;
 	cin >> nn1;
@@ -74,7 +74,7 @@ void game(Player& P1, Player& P2)
 	cout << " (請記得)" << endl;
 	P2.setCard(c.getCard(cardnum), num);
 	cout << "\n 要加牌按1，不加牌按0" << endl;
-	n1 = yasorno();
+	n1 = YesOrNo();
 	system("cls");
 	cardnum++;
 
@@ -93,7 +93,7 @@ void game(Player& P1, Player& P2)
 		
 		if (P2.getPoint().getCardPoint() < 10.5 && num < 5) {
 			cout << "\n 要加牌按1，不加牌按0" << endl;
-			n1 = yasorno();
+			n1 = YesOrNo();
 		}
 		else
 			Delay(2 * 1000);
@@ -128,7 +128,7 @@ void game(Player& P1, Player& P2)
 		cout << " (請記得)" << endl;
 		P1.setCard(c.getCard(cardnum), num);
 		cout << "\n 要加牌按1，不加牌按0" << endl;
-		n1 = yasorno();
+		n1 = YesOrNo();
 		system("cls");
 		cardnum++;
 		while (n1 && num < 5 && P1.getPoint().getCardPoint() < 10.5)
@@ -146,7 +146,7 @@ void game(Player& P1, Player& P2)
 			
 			if (num < 5 && P1.getPoint().getCardPoint() < 10.5) {
 				cout << "\n 要加牌按1，不加牌按0" << endl;
-				n1 = yasorno();
+				n1 = YesOrNo();
 			}
 			else
 				Delay(2.5 * 1000);
@@ -169,7 +169,7 @@ void game(Player& P1, Player& P2)
 
 		cout << " 莊家(" << P1.getName() << ")牌分為 :" << P1.getPoint().getCardPoint() << " 點" << endl;
 		cout << " 閒家(" << P2.getName() << ")牌分為 :" << P2.getPoint().getCardPoint() << " 點" << endl;
-		if (P1.getPoint().getCardPoint() < 10.5 && P1.getPoint().getCardPoint() >= P2.getPoint().getCardPoint()) {
+		if (P1.getPoint().getCardPoint() <= 10.5 && P1.getPoint().getCardPoint() >= P2.getPoint().getCardPoint()) {
 			cout << "\n 莊家(" << P1.getName() << ")獲勝，得1分" << endl;
 			P1.plusPlayerSum();
 		}
@@ -207,7 +207,7 @@ int main() {
 		cout << " Player1 " << P1.getName() << " :" << P1.getPlayerSum() << "分" << endl;
 		cout << " Player2 " << P2.getName() << " :" << P2.getPlayerSum() << "分" << endl;
 		cout << "\n 若要繼續玩請按1，若要結束請按0" << endl;
-		again = yasorno();
+		again = YesOrNo();
 		gamenum++;
 
 	}
