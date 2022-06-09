@@ -2,10 +2,10 @@
 #define Card_H
 
 class Card{ //·­²ú­t³d
-
+private:
+	int card[52];
 public:
 	Card();
-	int card[52];
 	void shuffle();//¬~µP
 	int getCard(int);//0~51
 	void print(int i);//·R¤ß3

@@ -3,8 +3,9 @@
 
 class Point//夢安負責
 {
-public:
+private:
     double CardPoint;//玩家抽到牌的分數，幾點(10.5)
+public:
     Point();
     Point(double);
     void plusCardPoint(int c);//計算點數
