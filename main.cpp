@@ -96,7 +96,7 @@ void game(Player& P1, Player& P2)
 			n1 = YesOrNo();
 		}
 		else
-			Delay(2 * 1000);
+			Delay(1 * 1000);
 
 		system("cls");
 		cardnum++;

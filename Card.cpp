@@ -4,19 +4,19 @@ using namespace std;
 
 Card::Card()
 {
-	
+	/*
+	ด๚ธี
 	int temp[9] = { 3,11,9,11,1,1};
 	for (int i = 0; i < 9; i++)
 		card[i] = temp[i];
 	for (int i = 9; i < 52; i++)
 		card[i] = i;
-	/*
-	ด๚ธี
+	*/
 	for (int i = 0; i < 52; i++)
 	{
 		card[i] = i;
 	}
-	shuffle();*/
+	shuffle();
 }
 void Card::shuffle()
 {
